@@ -1,4 +1,4 @@
 {
     "baseUrl": "https://chimera-playground-ui.azurewebsites.net", 
-    "retries": 3
+    "retries": 2
 }

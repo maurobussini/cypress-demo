@@ -30,6 +30,18 @@ describe("chimera.sign-in", () => {
         cy.get(':nth-child(1) > :nth-child(2) > [data-cy=userName]').should('contain', 'Administrator');
     });
 
+    it('should type search on search-box', () => {
+        cy.get('#searchBox').clear().type('something');
+        cy.get('#searchBox').should('have.value', 'something');
+    });
+
+    it('should navigate to user update clicking on update button', () => {
+        cy.get('#searchBox').clear().type('mauro');
+        cy.wait(5000);
+        cy.get('a.btn.btn-link').click();
+        cy.location('pathname').should('eq', '/users/User-0002');
+    });
+
 
     
 });
